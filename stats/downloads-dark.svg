@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12">
+<rect width="800" height="360" rx="6" fill="#0d1117"/>
+<rect x="56" y="22" width="10" height="10" rx="2" fill="#3987e5"/>
+<text x="72" y="31" fill="#f0f6fc">Shamsi Date Converter</text>
+<rect x="222.20000000000002" y="22" width="10" height="10" rx="2" fill="#d95926"/>
+<text x="238.20000000000002" y="31" fill="#f0f6fc">Project Manager with Time Tracking</text>
+<rect x="469.0" y="22" width="10" height="10" rx="2" fill="#199e70"/>
+<text x="485.0" y="31" fill="#f0f6fc">Codecks Bridge</text>
+<rect x="591.8" y="22" width="10" height="10" rx="2" fill="#c98500"/>
+<text x="607.8" y="31" fill="#f0f6fc">Smart RTL</text>
+<line x1="56" x2="776" y1="320.0" y2="320.0" stroke="#262c36" stroke-width="1"/>
+<text x="48" y="324.0" text-anchor="end" fill="#9198a1">0</text>
+<line x1="56" x2="776" y1="234.7" y2="234.7" stroke="#262c36" stroke-width="1"/>
+<text x="48" y="238.7" text-anchor="end" fill="#9198a1">200</text>
+<line x1="56" x2="776" y1="149.3" y2="149.3" stroke="#262c36" stroke-width="1"/>
+<text x="48" y="153.3" text-anchor="end" fill="#9198a1">400</text>
+<line x1="56" x2="776" y1="64.0" y2="64.0" stroke="#262c36" stroke-width="1"/>
+<text x="48" y="68.0" text-anchor="end" fill="#9198a1">600</text>
+<text x="416.0" y="340" text-anchor="middle" fill="#9198a1">Sep 30, 2026</text>
+<circle cx="416.0" cy="116.9" r="4" fill="#3987e5" stroke="#0d1117" stroke-width="2"><title>Shamsi Date Converter: 476</title></circle>
+<circle cx="416.0" cy="89.2" r="4" fill="#d95926" stroke="#0d1117" stroke-width="2"><title>Project Manager with Time Tracking: 541</title></circle>
+<circle cx="416.0" cy="294.0" r="4" fill="#199e70" stroke="#0d1117" stroke-width="2"><title>Codecks Bridge: 61</title></circle>
+<circle cx="416.0" cy="311.9" r="4" fill="#c98500" stroke="#0d1117" stroke-width="2"><title>Smart RTL: 19</title></circle>
+</svg>
