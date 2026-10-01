@@ -16,9 +16,14 @@
 <text x="48" y="153.3" text-anchor="end" fill="#59636e">400</text>
 <line x1="56" x2="776" y1="64.0" y2="64.0" stroke="#e6e6e3" stroke-width="1"/>
 <text x="48" y="68.0" text-anchor="end" fill="#59636e">600</text>
-<text x="416.0" y="340" text-anchor="middle" fill="#59636e">Sep 30, 2026</text>
-<circle cx="416.0" cy="116.9" r="4" fill="#2a78d6" stroke="#ffffff" stroke-width="2"><title>Shamsi Date Converter: 476</title></circle>
-<circle cx="416.0" cy="89.2" r="4" fill="#eb6834" stroke="#ffffff" stroke-width="2"><title>Project Manager with Time Tracking: 541</title></circle>
-<circle cx="416.0" cy="294.0" r="4" fill="#1baf7a" stroke="#ffffff" stroke-width="2"><title>Codecks Bridge: 61</title></circle>
-<circle cx="416.0" cy="311.9" r="4" fill="#eda100" stroke="#ffffff" stroke-width="2"><title>Smart RTL: 19</title></circle>
+<text x="56.0" y="340" text-anchor="start" fill="#59636e">Sep 30</text>
+<text x="776.0" y="340" text-anchor="end" fill="#59636e">Oct 1, 2026</text>
+<polyline points="56.0,116.9 776.0,115.6" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="776.0" cy="115.6" r="4" fill="#2a78d6" stroke="#ffffff" stroke-width="2"><title>Shamsi Date Converter: 479</title></circle>
+<polyline points="56.0,89.2 776.0,84.5" fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="776.0" cy="84.5" r="4" fill="#eb6834" stroke="#ffffff" stroke-width="2"><title>Project Manager with Time Tracking: 552</title></circle>
+<polyline points="56.0,294.0 776.0,293.5" fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="776.0" cy="293.5" r="4" fill="#1baf7a" stroke="#ffffff" stroke-width="2"><title>Codecks Bridge: 62</title></circle>
+<polyline points="56.0,311.9 776.0,302.9" fill="none" stroke="#eda100" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="776.0" cy="302.9" r="4" fill="#eda100" stroke="#ffffff" stroke-width="2"><title>Smart RTL: 40</title></circle>
 </svg>

@@ -3,7 +3,7 @@
 <!-- plugin-stats:start -->
 ## Obsidian plugins
 
-**1,097** total downloads across 4 plugins ([profile](https://community.obsidian.md/users/milad-s5)) · updated 2026-09-30
+**1,133** total downloads across 4 plugins ([profile](https://community.obsidian.md/users/milad-s5)) · updated 2026-10-01
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="stats/downloads-dark.svg">
@@ -12,8 +12,8 @@
 
 | Plugin | Downloads |
 |---|--:|
-| [Project Manager with Time Tracking](https://community.obsidian.md/plugins/project-manager-with-time-tracking) | 541 |
-| [Shamsi Date Converter](https://community.obsidian.md/plugins/shamsi-date-converter) | 476 |
-| [Codecks Bridge](https://community.obsidian.md/plugins/codecks-bridge) | 61 |
-| [Smart RTL](https://community.obsidian.md/plugins/smart-rtl) | 19 |
+| [Project Manager with Time Tracking](https://community.obsidian.md/plugins/project-manager-with-time-tracking) | 552 |
+| [Shamsi Date Converter](https://community.obsidian.md/plugins/shamsi-date-converter) | 479 |
+| [Codecks Bridge](https://community.obsidian.md/plugins/codecks-bridge) | 62 |
+| [Smart RTL](https://community.obsidian.md/plugins/smart-rtl) | 40 |
 <!-- plugin-stats:end -->
