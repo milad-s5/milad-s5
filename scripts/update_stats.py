@@ -3,7 +3,9 @@
 
 import csv
 import datetime as dt
+import html
 import json
+import math
 import re
 import urllib.request
 from pathlib import Path
@@ -18,6 +20,10 @@ SVG_PATH = ROOT / "stats" / "downloads-{mode}.svg"
 README = ROOT / "README.md"
 START, END = "<!-- plugin-stats:start -->", "<!-- plugin-stats:end -->"
 FIELDS = ["date", "id", "slug", "name", "downloads"]
+
+# Up to this many days of history the chart has one bar per day; past it, one bar per week.
+DAILY_DAYS = 14
+WEEKS = 12
 
 # Categorical slots in fixed order; a plugin keeps its slot (by Obsidian id) forever.
 THEMES = {
@@ -64,78 +70,112 @@ def save_rows(rows):
         w.writerows(sorted(rows, key=lambda r: (r["date"], r["id"])))
 
 
-def nice_step(span, ticks=5):
-    raw = max(span, 1) / ticks
-    mag = 10 ** (len(str(int(raw))) - 1)
-    return next(m * mag for m in (1, 2, 2.5, 5, 10) if m * mag >= raw)
+def gains(rows):
+    """{plugin id: {date: downloads gained since that plugin's previous snapshot}}."""
+    last, out = {}, {}
+    for r in sorted(rows, key=lambda r: (r["date"], r["id"])):
+        if r["id"] in last:
+            out.setdefault(r["id"], {})[dt.date.fromisoformat(r["date"])] = r["downloads"] - last[r["id"]]
+        last[r["id"]] = r["downloads"]
+    return out
+
+
+def gained_since(by_date, end, days=7):
+    return sum(v for d, v in by_date.items() if (end - d).days < days)
+
+
+def buckets(d0, d1):
+    """(unit, bar start dates, date -> bar start): days for a short history, else weeks from Monday."""
+    if (d1 - d0).days <= DAILY_DAYS:
+        return "day", [d0 + dt.timedelta(i) for i in range(1, (d1 - d0).days + 1)], lambda d: d
+    monday = lambda d: d - dt.timedelta(d.weekday())
+    starts = [monday(d1) - dt.timedelta(weeks=i) for i in reversed(range(WEEKS))]
+    return "week", [s for s in starts if s >= monday(d0)], monday
+
+
+def draw_panel(out, t, x0, y0, pw, ph, name, total, week, starts, stacks):
+    """A card: name, total, 7-day gain, and one bar per bucket stacked from (value, color) parts."""
+    out.append(f'<rect x="{x0}" y="{y0}" width="{pw}" height="{ph}" rx="6" fill="none" stroke="{t["grid"]}"/>')
+    out.append(f'<text x="{x0 + 14}" y="{y0 + 24}" font-weight="600" fill="{t["text"]}">{html.escape(name)}</text>')
+    out.append(f'<text x="{x0 + 14}" y="{y0 + 52}" font-size="22" font-weight="600" '
+               f'fill="{t["text"]}">{total:,}</text>')
+    out.append(f'<text x="{x0 + 22 + len(f"{total:,}") * 13}" y="{y0 + 52}" font-weight="600" '
+               f'fill="{t["muted"]}">{week:+,} in 7 days</text>')
+
+    bx0, bx1, by0, by1 = x0 + 14, x0 + pw - 14, y0 + 82, y0 + ph - 28
+    out.append(f'<line x1="{bx0}" x2="{bx1}" y1="{by1}" y2="{by1}" stroke="{t["grid"]}"/>')
+    if not starts:
+        return
+    top = max(max(sum(v for v, _ in s) for s in stacks), 1)
+    slot = (bx1 - bx0) / len(starts)
+    bw = min(slot * 0.6, 48)
+    every = math.ceil(len(starts) / max(int((bx1 - bx0) // 56), 1))  # date labels need ~56px each
+    for i, (d, stack) in enumerate(zip(starts, stacks)):
+        cx, y = bx0 + slot * (i + 0.5), by1
+        for v, c in stack:
+            if v > 0:
+                bh = (by1 - by0) * v / top
+                y -= bh
+                out.append(f'<rect x="{cx - bw / 2:.1f}" y="{y:.1f}" width="{bw:.1f}" height="{bh:.1f}" fill="{c}"/>')
+        if slot >= 22:
+            out.append(f'<text x="{cx:.1f}" y="{y - 5:.1f}" text-anchor="middle" '
+                       f'fill="{t["muted"]}">{sum(v for v, _ in stack):,}</text>')
+        if (len(starts) - 1 - i) % every == 0:
+            out.append(f'<text x="{cx:.1f}" y="{by1 + 16}" text-anchor="middle" '
+                       f'fill="{t["muted"]}">{d.strftime("%b %-d")}</text>')
 
 
 def render_svg(rows, mode):
     t = THEMES[mode]
-    w, h = 800, 360
-    left, right, top, bottom = 56, 24, 64, 40
+    w, pad, gap = 800, 16, 16
+    pw, ph, total_h = (w - 2 * pad - gap) // 2, 176, 200
 
-    series = {}
-    for r in rows:
-        series.setdefault(r["id"], {"name": r["name"], "points": []})["points"].append(
-            (dt.date.fromisoformat(r["date"]), r["downloads"]))
-    ids = sorted(series)
-    colors = {pid: t["series"][i] for i, pid in enumerate(ids[: len(t["series"])])}
+    d0 = dt.date.fromisoformat(min(r["date"] for r in rows))
+    d1 = dt.date.fromisoformat(max(r["date"] for r in rows))
+    latest = sorted((r for r in rows if r["date"] == d1.isoformat()), key=lambda r: -r["downloads"])
+    slots = sorted({r["id"] for r in rows})
+    colors = {pid: t["series"][i % len(t["series"])] for i, pid in enumerate(slots)}
+    gained = gains(rows)
+    unit, starts, bucket_of = buckets(d0, d1)
 
-    dates = sorted({d for s in series.values() for d, _ in s["points"]})
-    d0, d1 = dates[0], dates[-1]
-    days = max((d1 - d0).days, 1)
-    step = nice_step(max(r["downloads"] for r in rows))
-    ymax = max(step, step * -(-max(r["downloads"] for r in rows) // step))
+    per_bar = {}
+    for p in latest:
+        sums = dict.fromkeys(starts, 0)
+        for d, v in gained.get(p["id"], {}).items():
+            if bucket_of(d) in sums:
+                sums[bucket_of(d)] += v
+        per_bar[p["id"]] = [sums[s] for s in starts]
 
-    x = lambda d: left + (w - left - right) * ((d - d0).days / days if d1 > d0 else 0.5)
-    y = lambda v: top + (h - top - bottom) * (1 - v / ymax)
-
+    rows_of_cards = math.ceil(len(latest) / 2)
+    h = 48 + total_h + gap + rows_of_cards * (ph + gap)
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" '
         f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12">',
         f'<rect width="{w}" height="{h}" rx="6" fill="{t["surface"]}"/>',
+        f'<text x="{pad}" y="30" font-size="15" font-weight="600" fill="{t["text"]}">New downloads per {unit}</text>',
+        f'<text x="{w - pad}" y="30" text-anchor="end" fill="{t["muted"]}">each card has its own scale</text>',
     ]
-    # Legend: one row of swatch + name, the latest count carried by the README table.
-    lx = left
-    for pid, c in colors.items():
-        name = series[pid]["name"]
-        out.append(f'<rect x="{lx}" y="22" width="10" height="10" rx="2" fill="{c}"/>')
-        out.append(f'<text x="{lx + 16}" y="31" fill="{t["text"]}">{name}</text>')
-        lx += 16 + len(name) * 6.2 + 20
-    v = 0
-    while v <= ymax:
-        out.append(f'<line x1="{left}" x2="{w - right}" y1="{y(v):.1f}" y2="{y(v):.1f}" '
-                   f'stroke="{t["grid"]}" stroke-width="1"/>')
-        out.append(f'<text x="{left - 8}" y="{y(v) + 4:.1f}" text-anchor="end" fill="{t["muted"]}">{v:,.0f}</text>')
-        v += step
 
-    n = min(len(dates), 6)
-    tick_dates = sorted({dates[round(i * (len(dates) - 1) / max(n - 1, 1))] for i in range(n)})
-    for d in tick_dates:
-        anchor = "middle" if d0 == d1 else "start" if d == d0 else "end" if d == d1 else "middle"
-        out.append(f'<text x="{x(d):.1f}" y="{h - bottom + 20}" text-anchor="{anchor}" '
-                   f'fill="{t["muted"]}">{d.strftime("%b %-d, %Y" if d == d1 else "%b %-d")}</text>')
+    # All plugins: bars stacked in card order, so each segment matches its card's color.
+    draw_panel(out, t, pad, 48, w - 2 * pad, total_h, "All plugins",
+               sum(p["downloads"] for p in latest),
+               sum(gained_since(gained.get(p["id"], {}), d1) for p in latest), starts,
+               [[(per_bar[p["id"]][i], colors[p["id"]]) for p in latest] for i in range(len(starts))])
 
-    for pid in ids:
-        if pid not in colors:
-            continue
-        pts = sorted(series[pid]["points"])
-        c = colors[pid]
-        if len(pts) > 1:
-            path = " ".join(f"{x(d):.1f},{y(v):.1f}" for d, v in pts)
-            out.append(f'<polyline points="{path}" fill="none" stroke="{c}" stroke-width="2" '
-                       f'stroke-linejoin="round" stroke-linecap="round"/>')
-        d, v = pts[-1]
-        out.append(f'<circle cx="{x(d):.1f}" cy="{y(v):.1f}" r="4" fill="{c}" '
-                   f'stroke="{t["surface"]}" stroke-width="2"><title>{series[pid]["name"]}: {v:,}</title></circle>')
+    for k, p in enumerate(latest):
+        draw_panel(out, t, pad + (k % 2) * (pw + gap), 48 + total_h + gap + (k // 2) * (ph + gap), pw, ph,
+                   p["name"], p["downloads"], gained_since(gained.get(p["id"], {}), d1), starts,
+                   [[(v, colors[p["id"]])] for v in per_bar[p["id"]]])
 
     out.append("</svg>")
     return "\n".join(out) + "\n"
 
 
-def render_readme_section(today, latest):
+def render_readme_section(today, latest, rows):
     total = sum(p["downloads"] for p in latest)
+    end = dt.date.fromisoformat(today)
+    gained = gains(rows)
+    week = {p["id"]: gained_since(gained.get(p["id"], {}), end) for p in latest}
     lines = [
         START,
         "## Obsidian plugins",
@@ -145,14 +185,16 @@ def render_readme_section(today, latest):
         "",
         "<picture>",
         '  <source media="(prefers-color-scheme: dark)" srcset="stats/downloads-dark.svg">',
-        '  <img alt="Downloads of each Obsidian plugin over time" src="stats/downloads-light.svg">',
+        '  <img alt="New downloads of each Obsidian plugin over time" src="stats/downloads-light.svg">',
         "</picture>",
         "",
-        "| Plugin | Downloads |",
-        "|---|--:|",
+        "| Plugin | Downloads | Last 7 days |",
+        "|---|--:|--:|",
     ]
     for p in sorted(latest, key=lambda p: -p["downloads"]):
-        lines.append(f"| [{p['name']}]({PLUGIN_URL.format(slug=p['slug'])}) | {p['downloads']:,} |")
+        lines.append(f"| [{p['name']}]({PLUGIN_URL.format(slug=p['slug'])}) "
+                     f"| {p['downloads']:,} | {week[p['id']]:+,} |")
+    lines.append(f"| **Total** | **{total:,}** | **{sum(week.values()):+,}** |")
     lines.append(END)
     return "\n".join(lines)
 
@@ -170,7 +212,7 @@ def main():
         SVG_PATH.with_name(SVG_PATH.name.format(mode=mode)).write_text(render_svg(rows, mode), encoding="utf-8")
 
     readme = README.read_text(encoding="utf-8")
-    section = render_readme_section(today, latest)
+    section = render_readme_section(today, latest, rows)
     if START in readme:
         readme = re.sub(re.escape(START) + ".*?" + re.escape(END), lambda _: section, readme, flags=re.S)
     else:

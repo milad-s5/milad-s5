@@ -7,13 +7,14 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="stats/downloads-dark.svg">
-  <img alt="Downloads of each Obsidian plugin over time" src="stats/downloads-light.svg">
+  <img alt="New downloads of each Obsidian plugin over time" src="stats/downloads-light.svg">
 </picture>
 
-| Plugin | Downloads |
-|---|--:|
-| [Project Manager with Time Tracking](https://community.obsidian.md/plugins/project-manager-with-time-tracking) | 688 |
-| [Shamsi Date Converter](https://community.obsidian.md/plugins/shamsi-date-converter) | 487 |
-| [Smart RTL](https://community.obsidian.md/plugins/smart-rtl) | 74 |
-| [Codecks Bridge](https://community.obsidian.md/plugins/codecks-bridge) | 66 |
+| Plugin | Downloads | Last 7 days |
+|---|--:|--:|
+| [Project Manager with Time Tracking](https://community.obsidian.md/plugins/project-manager-with-time-tracking) | 688 | +147 |
+| [Shamsi Date Converter](https://community.obsidian.md/plugins/shamsi-date-converter) | 487 | +11 |
+| [Smart RTL](https://community.obsidian.md/plugins/smart-rtl) | 74 | +55 |
+| [Codecks Bridge](https://community.obsidian.md/plugins/codecks-bridge) | 66 | +5 |
+| **Total** | **1,315** | **+218** |
 <!-- plugin-stats:end -->
