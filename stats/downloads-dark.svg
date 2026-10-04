@@ -19,15 +19,16 @@
 <line x1="56" x2="776" y1="64.0" y2="64.0" stroke="#262c36" stroke-width="1"/>
 <text x="48" y="68.0" text-anchor="end" fill="#9198a1">800</text>
 <text x="56.0" y="340" text-anchor="start" fill="#9198a1">Sep 30</text>
-<text x="296.0" y="340" text-anchor="middle" fill="#9198a1">Oct 1</text>
-<text x="536.0" y="340" text-anchor="middle" fill="#9198a1">Oct 2</text>
-<text x="776.0" y="340" text-anchor="end" fill="#9198a1">Oct 3, 2026</text>
-<polyline points="56.0,167.7 296.0,166.7 536.0,166.4 776.0,164.5" fill="none" stroke="#3987e5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="776.0" cy="164.5" r="4" fill="#3987e5" stroke="#0d1117" stroke-width="2"><title>Shamsi Date Converter: 486</title></circle>
-<polyline points="56.0,146.9 296.0,143.4 536.0,129.6 776.0,101.4" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="776.0" cy="101.4" r="4" fill="#d95926" stroke="#0d1117" stroke-width="2"><title>Project Manager with Time Tracking: 683</title></circle>
-<polyline points="56.0,300.5 296.0,300.2 536.0,300.2 776.0,298.9" fill="none" stroke="#199e70" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="236.0" y="340" text-anchor="middle" fill="#9198a1">Oct 1</text>
+<text x="416.0" y="340" text-anchor="middle" fill="#9198a1">Oct 2</text>
+<text x="596.0" y="340" text-anchor="middle" fill="#9198a1">Oct 3</text>
+<text x="776.0" y="340" text-anchor="end" fill="#9198a1">Oct 4, 2026</text>
+<polyline points="56.0,167.7 236.0,166.7 416.0,166.4 596.0,164.5 776.0,164.2" fill="none" stroke="#3987e5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="776.0" cy="164.2" r="4" fill="#3987e5" stroke="#0d1117" stroke-width="2"><title>Shamsi Date Converter: 487</title></circle>
+<polyline points="56.0,146.9 236.0,143.4 416.0,129.6 596.0,101.4 776.0,99.8" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="776.0" cy="99.8" r="4" fill="#d95926" stroke="#0d1117" stroke-width="2"><title>Project Manager with Time Tracking: 688</title></circle>
+<polyline points="56.0,300.5 236.0,300.2 416.0,300.2 596.0,298.9 776.0,298.9" fill="none" stroke="#199e70" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="776.0" cy="298.9" r="4" fill="#199e70" stroke="#0d1117" stroke-width="2"><title>Codecks Bridge: 66</title></circle>
-<polyline points="56.0,313.9 296.0,307.2 536.0,304.6 776.0,300.5" fill="none" stroke="#c98500" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="776.0" cy="300.5" r="4" fill="#c98500" stroke="#0d1117" stroke-width="2"><title>Smart RTL: 61</title></circle>
+<polyline points="56.0,313.9 236.0,307.2 416.0,304.6 596.0,300.5 776.0,296.3" fill="none" stroke="#c98500" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="776.0" cy="296.3" r="4" fill="#c98500" stroke="#0d1117" stroke-width="2"><title>Smart RTL: 74</title></circle>
 </svg>
