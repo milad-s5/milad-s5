@@ -4,33 +4,33 @@
 <text x="784" y="30" text-anchor="end" fill="#9198a1">each card has its own scale</text>
 <rect x="16" y="48" width="768" height="200" rx="6" fill="none" stroke="#262c36"/>
 <text x="30" y="72" font-weight="600" fill="#f0f6fc">All plugins</text>
-<text x="30" y="100" font-size="22" font-weight="600" fill="#f0f6fc">1,767</text>
-<text x="103" y="100" font-weight="600" fill="#9198a1">+288 in 7 days</text>
+<text x="30" y="100" font-size="22" font-weight="600" fill="#f0f6fc">1,845</text>
+<text x="103" y="100" font-weight="600" fill="#9198a1">+336 in 7 days</text>
 <line x1="30" x2="770" y1="220" y2="220" stroke="#262c36"/>
-<rect x="129.3" y="164.2" width="48.0" height="55.8" fill="#d95926"/>
-<rect x="129.3" y="160.0" width="48.0" height="4.2" fill="#3987e5"/>
-<rect x="129.3" y="139.1" width="48.0" height="20.9" fill="#c98500"/>
-<rect x="129.3" y="137.2" width="48.0" height="1.9" fill="#199e70"/>
-<text x="153.3" y="132.2" text-anchor="middle" fill="#9198a1">218</text>
+<rect x="129.3" y="174.7" width="48.0" height="45.3" fill="#d95926"/>
+<rect x="129.3" y="171.3" width="48.0" height="3.4" fill="#3987e5"/>
+<rect x="129.3" y="154.3" width="48.0" height="17.0" fill="#c98500"/>
+<rect x="129.3" y="152.8" width="48.0" height="1.5" fill="#199e70"/>
+<text x="153.3" y="147.8" text-anchor="middle" fill="#9198a1">218</text>
 <text x="153.3" y="236" text-anchor="middle" fill="#9198a1">Sep 28</text>
-<rect x="376.0" y="175.9" width="48.0" height="44.1" fill="#d95926"/>
-<rect x="376.0" y="169.1" width="48.0" height="6.8" fill="#3987e5"/>
-<rect x="376.0" y="135.7" width="48.0" height="33.4" fill="#c98500"/>
-<rect x="376.0" y="132.7" width="48.0" height="3.0" fill="#199e70"/>
-<rect x="376.0" y="130.0" width="48.0" height="2.7" fill="#d55181"/>
-<text x="400.0" y="125.0" text-anchor="middle" fill="#9198a1">237</text>
+<rect x="376.0" y="184.2" width="48.0" height="35.8" fill="#d95926"/>
+<rect x="376.0" y="178.7" width="48.0" height="5.5" fill="#3987e5"/>
+<rect x="376.0" y="151.6" width="48.0" height="27.1" fill="#c98500"/>
+<rect x="376.0" y="149.1" width="48.0" height="2.5" fill="#199e70"/>
+<rect x="376.0" y="147.0" width="48.0" height="2.2" fill="#d55181"/>
+<text x="400.0" y="142.0" text-anchor="middle" fill="#9198a1">237</text>
 <text x="400.0" y="236" text-anchor="middle" fill="#9198a1">Oct 5</text>
-<rect x="622.7" y="194.2" width="48.0" height="25.8" fill="#d95926"/>
-<rect x="622.7" y="188.5" width="48.0" height="5.7" fill="#3987e5"/>
-<rect x="622.7" y="143.7" width="48.0" height="44.8" fill="#c98500"/>
-<rect x="622.7" y="142.2" width="48.0" height="1.5" fill="#199e70"/>
-<rect x="622.7" y="138.7" width="48.0" height="3.4" fill="#d55181"/>
-<text x="646.7" y="133.7" text-anchor="middle" fill="#9198a1">214</text>
+<rect x="622.7" y="187.3" width="48.0" height="32.7" fill="#d95926"/>
+<rect x="622.7" y="182.1" width="48.0" height="5.2" fill="#3987e5"/>
+<rect x="622.7" y="134.9" width="48.0" height="47.2" fill="#c98500"/>
+<rect x="622.7" y="133.7" width="48.0" height="1.2" fill="#199e70"/>
+<rect x="622.7" y="130.0" width="48.0" height="3.7" fill="#d55181"/>
+<text x="646.7" y="125.0" text-anchor="middle" fill="#9198a1">292</text>
 <text x="646.7" y="236" text-anchor="middle" fill="#9198a1">Oct 12</text>
 <rect x="16" y="264" width="376" height="176" rx="6" fill="none" stroke="#262c36"/>
 <text x="30" y="288" font-weight="600" fill="#f0f6fc">Project Manager with Time Tracking</text>
-<text x="30" y="316" font-size="22" font-weight="600" fill="#f0f6fc">872</text>
-<text x="77" y="316" font-weight="600" fill="#9198a1">+105 in 7 days</text>
+<text x="30" y="316" font-size="22" font-weight="600" fill="#f0f6fc">910</text>
+<text x="77" y="316" font-weight="600" fill="#9198a1">+125 in 7 days</text>
 <line x1="30" x2="378" y1="412" y2="412" stroke="#262c36"/>
 <rect x="64.0" y="346.0" width="48.0" height="66.0" fill="#d95926"/>
 <text x="88.0" y="341.0" text-anchor="middle" fill="#9198a1">147</text>
@@ -38,13 +38,13 @@
 <rect x="180.0" y="359.9" width="48.0" height="52.1" fill="#d95926"/>
 <text x="204.0" y="354.9" text-anchor="middle" fill="#9198a1">116</text>
 <text x="204.0" y="428" text-anchor="middle" fill="#9198a1">Oct 5</text>
-<rect x="296.0" y="381.5" width="48.0" height="30.5" fill="#d95926"/>
-<text x="320.0" y="376.5" text-anchor="middle" fill="#9198a1">68</text>
+<rect x="296.0" y="364.4" width="48.0" height="47.6" fill="#d95926"/>
+<text x="320.0" y="359.4" text-anchor="middle" fill="#9198a1">106</text>
 <text x="320.0" y="428" text-anchor="middle" fill="#9198a1">Oct 12</text>
 <rect x="408" y="264" width="376" height="176" rx="6" fill="none" stroke="#262c36"/>
 <text x="422" y="288" font-weight="600" fill="#f0f6fc">Shamsi Date Converter</text>
-<text x="422" y="316" font-size="22" font-weight="600" fill="#f0f6fc">520</text>
-<text x="469" y="316" font-weight="600" fill="#9198a1">+18 in 7 days</text>
+<text x="422" y="316" font-size="22" font-weight="600" fill="#f0f6fc">522</text>
+<text x="469" y="316" font-weight="600" fill="#9198a1">+19 in 7 days</text>
 <line x1="422" x2="770" y1="412" y2="412" stroke="#262c36"/>
 <rect x="456.0" y="371.7" width="48.0" height="40.3" fill="#3987e5"/>
 <text x="480.0" y="366.7" text-anchor="middle" fill="#9198a1">11</text>
@@ -52,27 +52,27 @@
 <rect x="572.0" y="346.0" width="48.0" height="66.0" fill="#3987e5"/>
 <text x="596.0" y="341.0" text-anchor="middle" fill="#9198a1">18</text>
 <text x="596.0" y="428" text-anchor="middle" fill="#9198a1">Oct 5</text>
-<rect x="688.0" y="357.0" width="48.0" height="55.0" fill="#3987e5"/>
-<text x="712.0" y="352.0" text-anchor="middle" fill="#9198a1">15</text>
+<rect x="688.0" y="349.7" width="48.0" height="62.3" fill="#3987e5"/>
+<text x="712.0" y="344.7" text-anchor="middle" fill="#9198a1">17</text>
 <text x="712.0" y="428" text-anchor="middle" fill="#9198a1">Oct 12</text>
 <rect x="16" y="456" width="376" height="176" rx="6" fill="none" stroke="#262c36"/>
 <text x="30" y="480" font-weight="600" fill="#f0f6fc">Smart RTL</text>
-<text x="30" y="508" font-size="22" font-weight="600" fill="#f0f6fc">280</text>
-<text x="77" y="508" font-weight="600" fill="#9198a1">+143 in 7 days</text>
+<text x="30" y="508" font-size="22" font-weight="600" fill="#f0f6fc">315</text>
+<text x="77" y="508" font-weight="600" fill="#9198a1">+168 in 7 days</text>
 <line x1="30" x2="378" y1="604" y2="604" stroke="#262c36"/>
-<rect x="64.0" y="573.2" width="48.0" height="30.8" fill="#c98500"/>
-<text x="88.0" y="568.2" text-anchor="middle" fill="#9198a1">55</text>
+<rect x="64.0" y="580.3" width="48.0" height="23.7" fill="#c98500"/>
+<text x="88.0" y="575.3" text-anchor="middle" fill="#9198a1">55</text>
 <text x="88.0" y="620" text-anchor="middle" fill="#9198a1">Sep 28</text>
-<rect x="180.0" y="554.8" width="48.0" height="49.2" fill="#c98500"/>
-<text x="204.0" y="549.8" text-anchor="middle" fill="#9198a1">88</text>
+<rect x="180.0" y="566.0" width="48.0" height="38.0" fill="#c98500"/>
+<text x="204.0" y="561.0" text-anchor="middle" fill="#9198a1">88</text>
 <text x="204.0" y="620" text-anchor="middle" fill="#9198a1">Oct 5</text>
 <rect x="296.0" y="538.0" width="48.0" height="66.0" fill="#c98500"/>
-<text x="320.0" y="533.0" text-anchor="middle" fill="#9198a1">118</text>
+<text x="320.0" y="533.0" text-anchor="middle" fill="#9198a1">153</text>
 <text x="320.0" y="620" text-anchor="middle" fill="#9198a1">Oct 12</text>
 <rect x="408" y="456" width="376" height="176" rx="6" fill="none" stroke="#262c36"/>
 <text x="422" y="480" font-weight="600" fill="#f0f6fc">Codecks Bridge</text>
 <text x="422" y="508" font-size="22" font-weight="600" fill="#f0f6fc">78</text>
-<text x="456" y="508" font-weight="600" fill="#9198a1">+6 in 7 days</text>
+<text x="456" y="508" font-weight="600" fill="#9198a1">+5 in 7 days</text>
 <line x1="422" x2="770" y1="604" y2="604" stroke="#262c36"/>
 <rect x="456.0" y="562.8" width="48.0" height="41.2" fill="#199e70"/>
 <text x="480.0" y="557.8" text-anchor="middle" fill="#9198a1">5</text>
@@ -85,15 +85,15 @@
 <text x="712.0" y="620" text-anchor="middle" fill="#9198a1">Oct 12</text>
 <rect x="16" y="648" width="376" height="176" rx="6" fill="none" stroke="#262c36"/>
 <text x="30" y="672" font-weight="600" fill="#f0f6fc">Prompt Shelf</text>
-<text x="30" y="700" font-size="22" font-weight="600" fill="#f0f6fc">17</text>
-<text x="64" y="700" font-weight="600" fill="#9198a1">+16 in 7 days</text>
+<text x="30" y="700" font-size="22" font-weight="600" fill="#f0f6fc">20</text>
+<text x="64" y="700" font-weight="600" fill="#9198a1">+19 in 7 days</text>
 <line x1="30" x2="378" y1="796" y2="796" stroke="#262c36"/>
 <text x="88.0" y="791.0" text-anchor="middle" fill="#9198a1">0</text>
 <text x="88.0" y="812" text-anchor="middle" fill="#9198a1">Sep 28</text>
-<rect x="180.0" y="744.7" width="48.0" height="51.3" fill="#d55181"/>
-<text x="204.0" y="739.7" text-anchor="middle" fill="#9198a1">7</text>
+<rect x="180.0" y="757.5" width="48.0" height="38.5" fill="#d55181"/>
+<text x="204.0" y="752.5" text-anchor="middle" fill="#9198a1">7</text>
 <text x="204.0" y="812" text-anchor="middle" fill="#9198a1">Oct 5</text>
 <rect x="296.0" y="730.0" width="48.0" height="66.0" fill="#d55181"/>
-<text x="320.0" y="725.0" text-anchor="middle" fill="#9198a1">9</text>
+<text x="320.0" y="725.0" text-anchor="middle" fill="#9198a1">12</text>
 <text x="320.0" y="812" text-anchor="middle" fill="#9198a1">Oct 12</text>
 </svg>
