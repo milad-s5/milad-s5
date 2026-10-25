@@ -13,7 +13,7 @@ Before that I took a BSc and an MSc in Electrical Engineering — Digital System
 <!-- plugin-stats:start -->
 ## Obsidian plugins
 
-**2,176** total downloads across 5 plugins ([profile](https://community.obsidian.md/users/milad-s5)) · updated 2026-10-24
+**2,203** total downloads across 5 plugins ([profile](https://community.obsidian.md/users/milad-s5)) · updated 2026-10-25
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="stats/downloads-dark.svg">
@@ -22,12 +22,12 @@ Before that I took a BSc and an MSc in Electrical Engineering — Digital System
 
 | Plugin | Downloads | Last 7 days |
 |---|--:|--:|
-| [Project Manager with Time Tracking](https://community.obsidian.md/plugins/project-manager-with-time-tracking) | 1,050 | +140 |
-| [Shamsi Date Converter](https://community.obsidian.md/plugins/shamsi-date-converter) | 530 | +8 |
-| [Smart RTL](https://community.obsidian.md/plugins/smart-rtl) | 480 | +165 |
+| [Project Manager with Time Tracking](https://community.obsidian.md/plugins/project-manager-with-time-tracking) | 1,055 | +131 |
+| [Shamsi Date Converter](https://community.obsidian.md/plugins/shamsi-date-converter) | 535 | +13 |
+| [Smart RTL](https://community.obsidian.md/plugins/smart-rtl) | 493 | +155 |
 | [Codecks Bridge](https://community.obsidian.md/plugins/codecks-bridge) | 83 | +5 |
-| [Prompt Shelf](https://community.obsidian.md/plugins/prompt-shelf) | 33 | +13 |
-| **Total** | **2,176** | **+331** |
+| [Prompt Shelf](https://community.obsidian.md/plugins/prompt-shelf) | 37 | +17 |
+| **Total** | **2,203** | **+321** |
 <!-- plugin-stats:end -->
 
 ## Graduate coursework
